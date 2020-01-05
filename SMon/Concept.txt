@@ -1,0 +1,47 @@
+﻿# smon 동작 컨셉 - dimohy
+
+- 최대한 기존 소스코드를 건들지 않고 데몬 설치 기능을 추가할 수 있도록 해본다.
+	- smon.Stub.Main 정적 메소드가 있어서 이 메소드가 Program.Main을 대리 호출한다.
+	- 데몬 설치에 필요한 메타 정보는 리소스 파일로 두고 smon에서 리소스를 조회해서 정보를 획득하도록 한다.
+		(우선순위 낮음) - 메타정보 예) smon.json (리소스) smon.Settings.cs
+		{
+		   "StartupMain" : "smon.TestService.Program.Main",
+		   "ServiceName" : "smon.TestService",
+		   "Description" : "smon Test Service"
+		}
+
+		- 호출 예) smon.Stub.Main
+			1) 어셈블리를 통해 smon.json 리소스를 찾는다 -> smon.TestService.Program.Main 획득
+			2) 데몬 stop에 필요한 각종 처리
+			3) 획득한 문자열을 이용해 정적메소드 호출 -- 인자 args 넘겨줌
+
+	-  커맨트 명령 : 실행파일 [install, uninstall, start, stop, restart]
+		(우선순위 낮음) ※ install, uninstall, start, stop, restart를 제외한 args는 그대로 Program.Main으로 넘겨준다.
+		예) 1) 실행파일 -param1 a -param2 b -pram3 c -> // Progtam.Main에 그대로 넘겨줌
+		    2) 실행파일 install -param1 a -param2 b -pram3 c -> 데몬 설정에 실행 커맨드 "실행파일 -param1 a -param2 b -pram3 c"로 설정함
+
+    - smon.Stub.cs -> smon.IProvider이용해서 데몬 처리 및 실행
+	- smon.IProvider.cs
+		- install()
+		- uninstall()
+		- start()
+		- stop()
+		- restart()
+	- smon.Provider.Windows.cs - smon.IProvider 구현
+	- smon.Provider.Linux.cs - smon.IProvider 구현
+
+
+# shosting 참고
+어쨌든 윈도우즈 서비스 또는 리눅스 데몬 설치 프로세스는 의미가 있음
+https://github.com/aspnet/Extensions/blob/b83b27d76439497459fe9cf7337d5128c900eb5a/src/Hosting/WindowsServices/src/WindowsServiceLifetimeHostBuilderExtensions.cs
+
+그리고 각각 윈도우즈인지 유닉스 환경인지를 확인하기 때문에,
+
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+                .UseWindowsService()
+                .UseSystemd()
+                .ConfigureServices((hostContext, services) =>
+                {
+                    services.AddHostedService<Worker>();
+                });
