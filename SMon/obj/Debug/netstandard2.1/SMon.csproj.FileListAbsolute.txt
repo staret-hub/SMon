@@ -1,0 +1,8 @@
+C:\SEIL\github\staret-hub\SMon\SMon\bin\Debug\netstandard2.1\SMon.deps.json
+C:\SEIL\github\staret-hub\SMon\SMon\bin\Debug\netstandard2.1\SMon.dll
+C:\SEIL\github\staret-hub\SMon\SMon\bin\Debug\netstandard2.1\SMon.pdb
+C:\SEIL\github\staret-hub\SMon\SMon\obj\Debug\netstandard2.1\SMon.csprojAssemblyReference.cache
+C:\SEIL\github\staret-hub\SMon\SMon\obj\Debug\netstandard2.1\SMon.AssemblyInfoInputs.cache
+C:\SEIL\github\staret-hub\SMon\SMon\obj\Debug\netstandard2.1\SMon.AssemblyInfo.cs
+C:\SEIL\github\staret-hub\SMon\SMon\obj\Debug\netstandard2.1\SMon.dll
+C:\SEIL\github\staret-hub\SMon\SMon\obj\Debug\netstandard2.1\SMon.pdb

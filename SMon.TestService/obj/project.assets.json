@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    ".NETStandard,Version=v2.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "SMon/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/SMon.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SMon.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "SMon/1.0.0": {
+      "type": "project",
+      "path": "../SMon/SMon.csproj",
+      "msbuildProject": "../SMon/SMon.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETStandard,Version=v2.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "SMon >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\super\\.nuget\\packages\\": {}
@@ -13,26 +32,30 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\SEIL\\github\\staret-hub\\SMon\\SMon\\SMon.csproj",
-      "projectName": "SMon",
-      "projectPath": "C:\\SEIL\\github\\staret-hub\\SMon\\SMon\\SMon.csproj",
+      "projectUniqueName": "C:\\SEIL\\github\\staret-hub\\SMon\\SMon.TestService\\SMon.TestService.csproj",
+      "projectName": "SMon.TestService",
+      "projectPath": "C:\\SEIL\\github\\staret-hub\\SMon\\SMon.TestService\\SMon.TestService.csproj",
       "packagesPath": "C:\\Users\\super\\.nuget\\packages\\",
-      "outputPath": "C:\\SEIL\\github\\staret-hub\\SMon\\SMon\\obj\\",
+      "outputPath": "C:\\SEIL\\github\\staret-hub\\SMon\\SMon.TestService\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\super\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "netstandard2.1"
+        "netcoreapp3.1"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "netstandard2.1": {
-          "projectReferences": {}
+        "netcoreapp3.1": {
+          "projectReferences": {
+            "C:\\SEIL\\github\\staret-hub\\SMon\\SMon\\SMon.csproj": {
+              "projectPath": "C:\\SEIL\\github\\staret-hub\\SMon\\SMon\\SMon.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -42,7 +65,7 @@
       }
     },
     "frameworks": {
-      "netstandard2.1": {
+      "netcoreapp3.1": {
         "imports": [
           "net461",
           "net462",
@@ -54,7 +77,7 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
-          "NETStandard.Library": {
+          "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
