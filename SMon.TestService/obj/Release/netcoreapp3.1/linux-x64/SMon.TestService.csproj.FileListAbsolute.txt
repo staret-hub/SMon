@@ -11,3 +11,16 @@ C:\SEIL\github\staret-hub\SMon.TestService\obj\Release\netcoreapp3.1\linux-x64\S
 C:\SEIL\github\staret-hub\SMon.TestService\obj\Release\netcoreapp3.1\linux-x64\SMon.TestService.csproj.CopyComplete
 C:\SEIL\github\staret-hub\SMon.TestService\obj\Release\netcoreapp3.1\linux-x64\SMon.TestService.dll
 C:\SEIL\github\staret-hub\SMon.TestService\obj\Release\netcoreapp3.1\linux-x64\SMon.TestService.pdb
+C:\SEIL\github\staret-hub\SMon\SMon.TestService\bin\Release\netcoreapp3.1\linux-x64\SMon.TestService
+C:\SEIL\github\staret-hub\SMon\SMon.TestService\bin\Release\netcoreapp3.1\linux-x64\SMon.TestService.deps.json
+C:\SEIL\github\staret-hub\SMon\SMon.TestService\bin\Release\netcoreapp3.1\linux-x64\SMon.TestService.runtimeconfig.json
+C:\SEIL\github\staret-hub\SMon\SMon.TestService\bin\Release\netcoreapp3.1\linux-x64\SMon.TestService.runtimeconfig.dev.json
+C:\SEIL\github\staret-hub\SMon\SMon.TestService\bin\Release\netcoreapp3.1\linux-x64\SMon.TestService.dll
+C:\SEIL\github\staret-hub\SMon\SMon.TestService\bin\Release\netcoreapp3.1\linux-x64\SMon.TestService.pdb
+C:\SEIL\github\staret-hub\SMon\SMon.TestService\bin\Release\netcoreapp3.1\linux-x64\SMon.dll
+C:\SEIL\github\staret-hub\SMon\SMon.TestService\bin\Release\netcoreapp3.1\linux-x64\SMon.pdb
+C:\SEIL\github\staret-hub\SMon\SMon.TestService\obj\Release\netcoreapp3.1\linux-x64\SMon.TestService.AssemblyInfoInputs.cache
+C:\SEIL\github\staret-hub\SMon\SMon.TestService\obj\Release\netcoreapp3.1\linux-x64\SMon.TestService.AssemblyInfo.cs
+C:\SEIL\github\staret-hub\SMon\SMon.TestService\obj\Release\netcoreapp3.1\linux-x64\SMon.TestService.csproj.CopyComplete
+C:\SEIL\github\staret-hub\SMon\SMon.TestService\obj\Release\netcoreapp3.1\linux-x64\SMon.TestService.dll
+C:\SEIL\github\staret-hub\SMon\SMon.TestService\obj\Release\netcoreapp3.1\linux-x64\SMon.TestService.pdb

@@ -4,7 +4,7 @@
     ".NETCoreApp,Version=v3.1": {
       "SMon/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
+        "framework": ".NETStandard,Version=v2.1",
         "compile": {
           "bin/placeholder/SMon.dll": {}
         },
@@ -16,7 +16,7 @@
     ".NETCoreApp,Version=v3.1/linux-x64": {
       "SMon/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
+        "framework": ".NETStandard,Version=v2.1",
         "compile": {
           "bin/placeholder/SMon.dll": {}
         },
@@ -29,8 +29,8 @@
   "libraries": {
     "SMon/1.0.0": {
       "type": "project",
-      "path": "../SMon/SMon/SMon.csproj",
-      "msbuildProject": "../SMon/SMon/SMon.csproj"
+      "path": "../SMon/SMon.csproj",
+      "msbuildProject": "../SMon/SMon.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -44,11 +44,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\SEIL\\github\\staret-hub\\SMon.TestService\\SMon.TestService.csproj",
+      "projectUniqueName": "C:\\SEIL\\github\\staret-hub\\SMon\\SMon.TestService\\SMon.TestService.csproj",
       "projectName": "SMon.TestService",
-      "projectPath": "C:\\SEIL\\github\\staret-hub\\SMon.TestService\\SMon.TestService.csproj",
+      "projectPath": "C:\\SEIL\\github\\staret-hub\\SMon\\SMon.TestService\\SMon.TestService.csproj",
       "packagesPath": "C:\\Users\\super\\.nuget\\packages\\",
-      "outputPath": "C:\\SEIL\\github\\staret-hub\\SMon.TestService\\obj\\publish\\linux-x64\\",
+      "outputPath": "C:\\SEIL\\github\\staret-hub\\SMon\\SMon.TestService\\obj\\publish\\linux-x64\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\super\\AppData\\Roaming\\NuGet\\NuGet.Config",

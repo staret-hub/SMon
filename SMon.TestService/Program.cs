@@ -1,5 +1,6 @@
 ﻿using SMon.Provider;
 using System;
+using System.Threading;
 
 namespace SMon.TestService
 {
@@ -7,7 +8,12 @@ namespace SMon.TestService
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("TestService Main!");
+            Console.WriteLine("Started TestService Main!");
+
+            while (true)
+            {
+                Thread.Sleep(1000);
+            }
         }
     }
 

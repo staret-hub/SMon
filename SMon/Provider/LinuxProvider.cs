@@ -103,10 +103,11 @@ SyslogIdentifier={serviceName}
 [Install]
 WantedBy=multi-user.target
 ";
-                Console.WriteLine(fullText);
+                //Console.WriteLine(fullText);
 
                 File.WriteAllText(serviceFilePath, fullText);
                 //WriteLog(serviceFilePath + " Created");
+
                 ControlService(serviceName, "enable");
                 ControlService(serviceName, "start");
             }
@@ -136,8 +137,10 @@ WantedBy=multi-user.target
             var psi = new ProcessStartInfo();
             psi.FileName = "systemctl";
             psi.Arguments = $"{mode} {serviceName}";
+            
             var child = Process.Start(psi);
             child.WaitForExit();
+         
             return child.ExitCode;
         }
     }
