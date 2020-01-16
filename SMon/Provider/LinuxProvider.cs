@@ -10,6 +10,12 @@ namespace SMon.Provider
     {
         private ServiceSettings settings;
 
+        /// <summary>
+        /// dotnet-[Service Name]
+        /// </summary>
+        private static readonly string SERVICE_NAME_DOTNET_PREFIX = "dotnet-";
+
+
         public LinuxProvider(ServiceSettings settings)
         {
             this.settings = settings;
@@ -24,7 +30,7 @@ namespace SMon.Provider
             }
             catch (UnauthorizedAccessException)
             {
-                Console.WriteLine("Permission denied.(Hint: use sudo)");
+                WriteLog("Permission denied.(Hint: use sudo)");
             }
         }
 
@@ -36,12 +42,14 @@ namespace SMon.Provider
 
         public void Start()
         {
-            ControlService(settings.ServiceName, "start");
+            var serviceName = $"{SERVICE_NAME_DOTNET_PREFIX}{settings.ServiceName.ToLower()}";
+            ControlService(serviceName, "start");
         }
 
         public void Stop()
         {
-            ControlService(settings.ServiceName, "stop");
+            var serviceName = $"{SERVICE_NAME_DOTNET_PREFIX}{settings.ServiceName.ToLower()}";
+            ControlService(serviceName, "stop");
         }
 
         public void Uninstall()
@@ -56,7 +64,7 @@ namespace SMon.Provider
             }
         }
 
-        static int InstallService(string netDllPath, string[] args, bool doInstall)
+        private static int InstallService(string netDllPath, string[] args, bool doInstall)
         {
             var dllFileName = Path.GetFileName(netDllPath);
             var osName = Environment.OSVersion.ToString();
@@ -71,16 +79,13 @@ namespace SMon.Provider
 
             if (doInstall == true && fi != null && fi.Exists == false)
             {
-                //WriteLog("NOT FOUND: " + fi.FullName);
+                WriteLog("NOT FOUND: " + fi.FullName);
                 return 1;
             }
 
-            var serviceName = "dotnet-" + Path.GetFileNameWithoutExtension(dllFileName).ToLower();
-
+            var serviceName = $"{SERVICE_NAME_DOTNET_PREFIX}{Path.GetFileNameWithoutExtension(dllFileName).ToLower()}";
             var exeName = Process.GetCurrentProcess().MainModule.FileName;
-
             var workingDir = Path.GetDirectoryName(fi.FullName);
-
             string serviceFilePath = $"/etc/systemd/system/{serviceName}.service";
 
             if (doInstall == true)
@@ -103,10 +108,9 @@ SyslogIdentifier={serviceName}
 [Install]
 WantedBy=multi-user.target
 ";
-                //Console.WriteLine(fullText);
 
                 File.WriteAllText(serviceFilePath, fullText);
-                //WriteLog(serviceFilePath + " Created");
+                WriteLog(serviceFilePath + " Created");
 
                 ControlService(serviceName, "enable");
                 ControlService(serviceName, "start");
@@ -117,20 +121,21 @@ WantedBy=multi-user.target
                 {
                     ControlService(serviceName, "stop");
                     File.Delete(serviceFilePath);
-                    //WriteLog(serviceFilePath + " Deleted");
+                    WriteLog(serviceFilePath + " Deleted");
                 }
             }
 
             return 0;
         }
 
-        static int ControlService(string serviceName, string mode)
+        private static int ControlService(string serviceName, string mode)
         {
             string servicePath = $"/etc/systemd/system/{serviceName}.service";
-
+            
             if (File.Exists(servicePath) == false)
             {
-                //WriteLog($"No service: {serviceName} to {mode}");
+                WriteLog($"Service Path: {servicePath}");
+                WriteLog($"No service: {serviceName} to {mode}");
                 return 1;
             }
 
@@ -142,6 +147,11 @@ WantedBy=multi-user.target
             child.WaitForExit();
          
             return child.ExitCode;
+        }
+
+        public static void WriteLog(string message)
+        {
+            Console.WriteLine(message);
         }
     }
 }
