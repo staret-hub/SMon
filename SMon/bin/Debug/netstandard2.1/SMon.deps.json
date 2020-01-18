@@ -7,7 +7,7 @@
   "targets": {
     ".NETStandard,Version=v2.1": {},
     ".NETStandard,Version=v2.1/": {
-      "SMon/1.0.0": {
+      "SMon/0.0.1": {
         "runtime": {
           "SMon.dll": {}
         }
@@ -15,7 +15,7 @@
     }
   },
   "libraries": {
-    "SMon/1.0.0": {
+    "SMon/0.0.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

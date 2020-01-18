@@ -5,7 +5,7 @@
   },
   "projects": {
     "C:\\SEIL\\github\\staret-hub\\SMon\\SMon\\SMon.csproj": {
-      "version": "1.0.0",
+      "version": "0.0.1",
       "restore": {
         "projectUniqueName": "C:\\SEIL\\github\\staret-hub\\SMon\\SMon\\SMon.csproj",
         "projectName": "SMon",
@@ -53,11 +53,6 @@
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
-        }
-      },
-      "runtimes": {
-        "linux-x64": {
-          "#import": []
         }
       }
     }
