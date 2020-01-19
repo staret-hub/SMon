@@ -13,7 +13,7 @@ dotnet add package SMon
 ```
 
 ### Usage
-
+Sample code
 ```cs
 using SMon.Provider;
 using System;
@@ -83,4 +83,13 @@ namespace SMon.TestService
     }
 }
 
+```
+
+Sample Commands on Linux
+```sh
+$ ./SMon.TestService
+$ sudo ./SMon.TestService install
+$ sudo ./SMon.TestService uninstall
+$ sudo ./SMon.TestService start
+$ sudo ./SMon.TestService stop
 ```
