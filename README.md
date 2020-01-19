@@ -85,7 +85,7 @@ namespace SMon.TestService
 
 ```
 
-Sample Commands on Linux
+Samples on Linux
 ```sh
 $ ./SMon.TestService
 $ sudo ./SMon.TestService install
