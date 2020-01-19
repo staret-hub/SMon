@@ -12,8 +12,6 @@ SMon is available on [NuGet](https://www.nuget.org/packages/SMon). Install the p
 dotnet add package SMon
 ```
 
-Use the `--version` option to specify a [preview version](https://www.nuget.org/packages/SMon/absoluteLatest) to install.
-
 ### Usage
 
 ```cs
