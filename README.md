@@ -66,7 +66,7 @@ You must change the `<StartupObject>` starting entry point in the `.csproj` proj
 </Project>
 ```
 
-Samples on Linux
+Samples
 ```sh
 $ ./SMon.TestService
 $ sudo ./SMon.TestService install
