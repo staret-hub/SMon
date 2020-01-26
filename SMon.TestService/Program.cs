@@ -8,30 +8,27 @@ namespace SMon.TestService
     {
         public static void Main(string[] args)
         {
-            var settings = new ServiceSettings
-            {
-                ServiceName = "SMon.TestService",
-                //StartupMain = "SMon.TestService.Program",
-                Description = "SMon Test Service",
-                //NetDLLPath = Type.GetType(settings.StartupMain).Assembly.Location,
-                //OSName = Environment.OSVersion.ToString()
-            };
+            Console.WriteLine("Started TestService Main!");
 
-            SMonHost.Run(args =>
+            while (true)
             {
-                Console.WriteLine("Started TestService Main!");
-
-                while (true)
-                {
-                    Thread.Sleep(1000);
-                    Console.WriteLine(DateTime.Now);
-                }
-            }, args, settings);
+                Thread.Sleep(1000);
+                Console.WriteLine(DateTime.Now);
+            }
         }
     }
 
     class SMon
     {
+        static void Main(string[] args)
+        {
+            var settings = new ServiceSettings
+            {
+                ServiceName = "SMon.TestService",
+                Description = "SMon Test Service"
+            };
 
+            SMonHost.Run(args => Program.Main(args), args, settings);
+        }
     }
 }
