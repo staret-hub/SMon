@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Reflection;
 using System.Text;
 
 namespace SMon.Provider
@@ -26,7 +27,8 @@ namespace SMon.Provider
         {
             try
             {
-                InstallService(settings.NetDLLPath, args, true);
+                var path = Assembly.GetEntryAssembly().Location;
+                InstallService(path, args, true);
             }
             catch (UnauthorizedAccessException)
             {
@@ -56,7 +58,8 @@ namespace SMon.Provider
         {
             try
             {
-                InstallService(settings.NetDLLPath, null, false);
+                var path = Assembly.GetEntryAssembly().Location;
+                InstallService(path, null, false);
             }
             catch (UnauthorizedAccessException)
             {
